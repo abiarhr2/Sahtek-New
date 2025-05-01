@@ -1,0 +1,143 @@
+/* Layout */
+.container {
+    display: flex;
+    min-height: 100vh;
+    font-family: sans-serif;
+  }
+  
+  .sidebar {
+    width: 220px;
+    background-color: #0d9488;
+    color: white;
+    padding: 20px;
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 30px;
+  }
+  
+  .nav a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 4px;
+  }
+  
+  .nav a:hover {
+    background-color: #0f766e;
+  }
+  
+  .main-content {
+    flex: 1;
+    background-color: #f2f2f2;
+    padding: 30px;
+  }
+  
+  /* Top bar */
+  .topbar {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .search-bar {
+    padding: 10px;
+    width: 60%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .user-icon {
+    font-size: 24px;
+  }
+  
+  /* Form */
+  .form {
+    background-color: #2dd4bf;
+    padding: 30px;
+    border-radius: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .form-title {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .form label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: 600;
+  }
+  
+  .form input,
+  .form textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    margin-bottom: 5px;
+    font-size: 16px;
+  }
+  
+  /* Priority Buttons */
+  .priority-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 0;
+  }
+  
+  .priority-btn {
+    padding: 10px 20px;
+    border-radius: 30px;
+    color: white;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .priority-btn.urgent {
+    background-color: red;
+  }
+  
+  .priority-btn.high {
+    background-color: orange;
+  }
+  
+  .priority-btn.medium {
+    background-color: gold;
+    color: black;
+  }
+  
+  .priority-btn.normal {
+    background-color: green;
+  }
+  
+  .priority-btn.active {
+    outline: 2px solid white;
+  }
+  
+  /* Submit Button */
+  .submit-btn {
+    background-color: #1e293b;
+    color: white;
+    font-size: 18px;
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    margin-top: 20px;
+    cursor: pointer;
+  }
+  
+  .submit-btn:hover {
+    background-color: #0f172a;
+  }
+  

@@ -1,0 +1,70 @@
+/* Sidebar container */
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background-color: #2c3e50;
+    color: white;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Logo styling */
+  .sidebar .logo {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 40px;
+    text-align: center;
+    color: #ecf0f1;
+    text-transform: uppercase;
+  }
+  
+  /* Navigation links container */
+  .nav {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  /* Style for each link */
+  .nav a {
+    text-decoration: none;
+    color: #ecf0f1;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 4px;
+    font-size: 16px;
+    width: 100%;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Hover effect for links */
+  .nav a:hover {
+    background-color: #34495e;
+  }
+  
+  /* Active link style */
+  .nav a.active {
+    background-color: #2980b9;
+  }
+  
+  /* Mobile responsiveness: Sidebar should be hidden and accessible via toggle */
+  @media (max-width: 768px) {
+    .sidebar {
+      width: 100%;
+      height: auto;
+      position: relative;
+      box-shadow: none;
+    }
+    
+    .nav a {
+      text-align: center;
+      padding: 15px;
+    }
+  }
+  
