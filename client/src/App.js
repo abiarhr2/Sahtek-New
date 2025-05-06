@@ -4,10 +4,12 @@ import Sidebar from './Components/Sidebar/Sidebar';
 import Signup from './Components/Sign_up';
 import Login from './Components/Login';
 import Appointment from './Components/Appointment/Appointment';
+import Staff from './Components/Staff/Staff'
+import Dashboard from './Components/UserDashboard/Dashboard';
+import History from './Components/History/History';
 import Chatbox from './Components/Chatbox/Chatbox';
 import Account from './Components/Account/Account';
-import History from './Components/History/History';
-import Staff from './Components/Staff/Staff';
+
 function App() {
   const user = localStorage.getItem("token");
   const location = useLocation();
@@ -26,10 +28,14 @@ function App() {
         <Routes>
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/staff" element={<Staff />} />
+
+          {/* Protected Routes */}
+          <Route path="/dashboard" element={<Dashboard />} />
+
           <Route path="/chatbox" element={<Chatbox />} />
           <Route path="/account" element={<Account />} />
           <Route path="/history" element={<History />} />
-          <Route path="/staff" element={<Staff />} />
           <Route path="/appointments" element={user ? <Appointment /> : <Navigate to="/login" />} />
           <Route path="/" element={<Navigate to={user ? "/appointments" : "/login"} />} />
         </Routes>

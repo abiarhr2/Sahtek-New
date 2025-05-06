@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { Link, useLocation } from 'react-router-dom';
 import './Sidebar.css';
 
@@ -17,6 +19,7 @@ function Sidebar() {
   const location = useLocation();
 
   const menuItems = [
+
     { path: '/dashboard', label: 'Dashboard', icon: dashboardIcon },
     { path: '/appointments', label: 'Appointments', icon: appointmentIcon },
     { path: '/staff', label: 'Staff', icon: staffIcon },
@@ -26,6 +29,7 @@ function Sidebar() {
     { path: '/history', label: 'History', icon: dashboardIcon }, // reuse dashboard icon
     { path: '/calendar', label: 'Calendar', icon: dashboardIcon }, // reuse dashboard icon
     { path: '/settings', label: 'Settings', icon: settingsIcon },
+
   ];
 
   return (
