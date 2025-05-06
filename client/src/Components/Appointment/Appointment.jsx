@@ -13,27 +13,46 @@ export default function Appointment() {
     level: '',
   });
 
+  const [error, setError] = useState('');  // State for displaying error messages
+  const [isSubmitting, setIsSubmitting] = useState(false); // To disable button while submitting
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
+    // Basic validation check
+    if (!formData.city || !formData.location || !formData.hospital || !formData.date || !formData.time || !formData.consultationType || !formData.problem || !formData.level) {
+      setError('Please fill in all fields.');
+      return;
+    }
+
+    setIsSubmitting(true);
     try {
       const response = await fetch('http://localhost:3000/api/appointment', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData)
+        body: JSON.stringify(formData),
       });
-  
+
       const result = await response.json();
-  
+
       if (response.ok) {
         alert('Appointment booked successfully!');
         console.log('Server Response:', result);
+        setFormData({
+          city: '',
+          location: '',
+          hospital: '',
+          date: '',
+          time: '',
+          consultationType: '',
+          problem: '',
+          level: '',
+        });
       } else {
         console.error('Server responded with error:', result);
         alert('Failed to book appointment: ' + result?.error || 'Unknown error');
@@ -41,6 +60,8 @@ export default function Appointment() {
     } catch (error) {
       console.error('Fetch failed:', error);
       alert('Something went wrong. Please try again.');
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -53,29 +74,32 @@ export default function Appointment() {
           <div className="user-icon">👤</div>
         </div>
 
+        {/* Error Message */}
+        {error && <div className="error-message">{error}</div>}
+
         <form className="form" onSubmit={handleSubmit}>
           <h2 className="form-title">Appointment Booking</h2>
 
           <label>City Name</label>
-          <input name="city" placeholder="Name" onChange={handleChange} />
+          <input name="city" placeholder="Name" onChange={handleChange} value={formData.city} />
 
           <label>Location</label>
-          <input name="location" placeholder="Upload location" onChange={handleChange} />
+          <input name="location" placeholder="Upload location" onChange={handleChange} value={formData.location} />
 
           <label>Hospital</label>
-          <input name="hospital" placeholder="Select Hospital" onChange={handleChange} />
+          <input name="hospital" placeholder="Select Hospital" onChange={handleChange} value={formData.hospital} />
 
           <label>Date</label>
-          <input name="date" type="date" onChange={handleChange} />
+          <input name="date" type="date" onChange={handleChange} value={formData.date} />
 
           <label>Time</label>
-          <input name="time" type="time" onChange={handleChange} />
+          <input name="time" type="time" onChange={handleChange} value={formData.time} />
 
           <label>Consultation Type</label>
-          <input name="consultationType" placeholder="Select Consultation type" onChange={handleChange} />
+          <input name="consultationType" placeholder="Select Consultation type" onChange={handleChange} value={formData.consultationType} />
 
           <label>Problem</label>
-          <textarea name="problem" placeholder="Describe the problem" onChange={handleChange} />
+          <textarea name="problem" placeholder="Describe the problem" onChange={handleChange} value={formData.problem} />
 
           <label>Level</label>
           <div className="priority-buttons">
@@ -91,7 +115,9 @@ export default function Appointment() {
             ))}
           </div>
 
-          <button type="submit" className="submit-btn">Book</button>
+          <button type="submit" className="submit-btn" disabled={isSubmitting}>
+            {isSubmitting ? 'Submitting...' : 'Book'}
+          </button>
         </form>
       </main>
     </div>

@@ -1,13 +1,20 @@
 // RegisterCard.jsx
 import React from 'react';
 import './SectionCard.css';
+import { useNavigate } from 'react-router-dom';
 
-const StaffCard = () => (
-  <div className="card">
-    <h3>Get to Know Hospital Staff Members</h3>
-    <p>Explore available appointments by their categories/types...</p>
-    <button className="green-btn">Sign up</button>
-  </div>
-);
+const StaffCard = () => {
+  const navigate = useNavigate();
+
+  return (
+    <div className="card">
+      <h3>Meet Our Hospital Staff</h3>
+      <p>Explore the profiles and specialties of our dedicated hospital staff.</p>
+      <button className="green-btn" onClick={() => navigate('/staffcard')}>
+        View Staff
+      </button>
+    </div>
+  );
+};
 
 export default StaffCard;
