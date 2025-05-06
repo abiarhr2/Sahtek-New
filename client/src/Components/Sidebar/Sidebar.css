@@ -1,0 +1,103 @@
+/* src/Components/Sidebar.css */
+
+.sidebar {
+  width: 250px;
+  background-color: #66D2CE;
+  height: 100vh;
+  padding: 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-y: auto;
+  box-shadow: 4px 0px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.logo-image {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin-bottom: 0.5rem;
+}
+
+.logo-text {
+  color: white;
+  font-size: 1.7rem;
+  font-weight: bold;
+  font-family: 'Poppins', cursive;
+}
+
+.menu-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-grow: 1;
+}
+
+.menu-list li {
+  margin: 0.5rem 0;
+}
+
+.menu-list li a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  padding: 0.7rem 1rem;
+  border-radius: 12px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.menu-list li a:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+  transform: translateX(8px);
+}
+
+.menu-icon {
+  width: 22px;
+  height: 22px;
+  margin-right: 15px;
+}
+
+.menu-label {
+  font-size: 1.1rem;
+  font-weight: 500;
+  font-family: 'Poppins', sans-serif;
+}
+
+.active-link a {
+  background-color: rgba(255, 255, 255, 0.5);
+  color: #004c48;
+  font-weight: bold;
+}
+
+.bottom-section {
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.logout-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  padding: 0.7rem 1rem;
+  border-radius: 12px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.logout-link:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+  transform: translateX(8px);
+}
