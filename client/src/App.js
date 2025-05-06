@@ -4,7 +4,7 @@ import Sidebar from './Components/Sidebar/Sidebar';
 import Signup from './Components/Sign_up';
 import Login from './Components/Login';
 import Appointment from './Components/Appointment/Appointment';
-
+import Chatbox from './Components/Chatbox/Chatbox';
 function App() {
   const user = localStorage.getItem("token");
   const location = useLocation();
@@ -23,6 +23,7 @@ function App() {
         <Routes>
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/chatbox" element={<Chatbox />} />
           <Route path="/appointments" element={user ? <Appointment /> : <Navigate to="/login" />} />
           <Route path="/" element={<Navigate to={user ? "/appointments" : "/login"} />} />
         </Routes>
