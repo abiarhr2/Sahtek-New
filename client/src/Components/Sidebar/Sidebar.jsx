@@ -1,9 +1,6 @@
-<<<<<<< HEAD
+
 import React from 'react';
-import { Link } from 'react-router-dom';
-import './Sidebar';  // Import the sidebar CSS
-import Dashboard from '../UserDashboard/Dashboard';
-=======
+
 import { Link, useLocation } from 'react-router-dom';
 import './Sidebar.css';
 
@@ -21,20 +18,9 @@ import logoIcon from '../../assets/logo.png';
 
 function Sidebar() {
   const location = useLocation();
->>>>>>> 14ee950924c8112f70e94950ef4a84635b53fa7e
 
   const menuItems = [
-<<<<<<< HEAD
-    { name: "Dashboard", path: "/dashboard" },
-    { name: "Appointments", path: "/appointments" },
-    { name: "Staffs", path: "/staffs" },
-    { name: "Chats", path: "/chats" },
-    { name: "Inbox", path: "/inbox" },
-    { name: "Account", path: "/account" },
-    { name: "History", path: "/history" },
-    { name: "Calendar", path: "/calendar" },
-    { name: "Settings", path: "/settings" },
-=======
+
     { path: '/dashboard', label: 'Dashboard', icon: dashboardIcon },
     { path: '/appointments', label: 'Appointments', icon: appointmentIcon },
     { path: '/staff', label: 'Staff', icon: staffIcon },
@@ -44,7 +30,7 @@ function Sidebar() {
     { path: '/history', label: 'History', icon: dashboardIcon }, // reuse dashboard icon
     { path: '/calendar', label: 'Calendar', icon: dashboardIcon }, // reuse dashboard icon
     { path: '/settings', label: 'Settings', icon: settingsIcon },
->>>>>>> 14ee950924c8112f70e94950ef4a84635b53fa7e
+
   ];
 
   return (
