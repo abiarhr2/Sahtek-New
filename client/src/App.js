@@ -4,7 +4,7 @@ import Sidebar from './Components/Sidebar/Sidebar';
 import Signup from './Components/Sign_up';
 import Login from './Components/Login';
 import Appointment from './Components/Appointment/Appointment';
-
+import Staff from './Components/Staff/Staff'
 import Dashboard from './Components/UserDashboard/Dashboard';
 
 
@@ -31,7 +31,7 @@ function App() {
           <Route path="/login" element={<Login />} />
 
           <Route path="/dashboard" element={<Dashboard />} />
-
+          <Route path="/staff" element={<Staff />} />
           <Route path="/chatbox" element={<Chatbox />} />
           <Route path="/account" element={<Account />} />
 
