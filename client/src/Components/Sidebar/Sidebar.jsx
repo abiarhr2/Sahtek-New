@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Sidebar';  // Import the sidebar CSS
+import Dashboard from '../UserDashboard/Dashboard';
 
 export default function Sidebar() {
   const menuItems = [
-    { name: "Dashboard", path: "/" },
+    { name: "Dashboard", path: "/dashboard" },
     { name: "Appointments", path: "/appointments" },
     { name: "Staffs", path: "/staffs" },
     { name: "Chats", path: "/chats" },

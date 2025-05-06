@@ -1,0 +1,12 @@
+.dashboard-container {
+    padding: 2rem;
+    background-color: #f8f8f8;
+  }
+  
+  .card-row {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+  }
+  
