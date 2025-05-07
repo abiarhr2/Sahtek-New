@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f4f5f7;
+  color: #333;
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Sidebar */
+.sidebare {
+  width: 280px;
+  background-color: #ffffff;
+  border-right: 1px solid #dcdfe3;
+  padding: 16px;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 6px 10px;
+  background: #f9f9f9;
+}
+
+.search-bar input {
+  flex: 1;
+  padding: 6px 8px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  background: transparent;
+}
+
+.search-icon {
+  margin-right: 8px;
+  color: #999;
+}
+
+.email-list-item {
+  padding: 12px 8px;
+  border-bottom: 1px solid #eaecef;
+  cursor: pointer;
+}
+
+.email-list-item:hover {
+  background-color: #f1f3f5;
+}
+
+.email-sender {
+  font-weight: 600;
+  margin-bottom: 4px;
+  font-size: 14px;
+}
+
+.email-subject {
+  font-size: 13px;
+  color: #555;
+  line-height: 1.4;
+}
+
+/* Main Content */
+.main-content {
+  flex: 1;
+  padding: 24px;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+.email-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.email-header h2 {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.email-time {
+  font-size: 12px;
+  color: #888;
+  margin-bottom: 16px;
+}
+
+.email-body {
+  background-color: #ffffff;
+  padding: 18px;
+  border-radius: 6px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+  margin-bottom: 18px;
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+.reply-box {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #dcdfe3;
+  border-radius: 6px;
+  font-size: 14px;
+  resize: vertical;
+  min-height: 100px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+.send-button {
+  background-color: #66D2CE;
+  color: #fff;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.send-button:hover {
+  background-color: #66D2CE;
+}
+
+/* Icon buttons */
+.icon-buttons {
+  display: flex;
+  gap: 18px;
+}
+
+.icon-buttons svg {
+  cursor: pointer;
+  color: #666;
+  width: 18px;
+  height: 18px;
+}
+
+.icon-buttons svg:hover {
+  color: #111;
+}
+
+.select-recipient {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+    margin-bottom: 12px;
+    width: 100%;
+  }
+  
+  .send-button:hover {
+    background-color: #4338ca;
+  }
+  
