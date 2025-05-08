@@ -2,8 +2,8 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const actions = [
-  { icon: '➕', title: 'Book Appointment', desc: 'Schedule a new appointment', path: '/appointment' },
-  { icon: '📄', title: 'Test Results', desc: 'View your latest test results', path: '/test-results' },
+  { icon: '➕', title: 'Book Appointment', desc: 'Schedule a new appointment', path: '/staff' },
+  { icon: '📄', title: 'Medical History', desc: 'View your latest test results', path: '/medicalHistory' },
 ];
 
 const ActionCards = () => {

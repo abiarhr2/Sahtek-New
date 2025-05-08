@@ -14,6 +14,7 @@ import '@fontsource/quicksand'
 import Chatbox from './Components/Chatbox/Chatbox';
 import Account from './Components/Account/Account';
 import History from './Components/History/History';
+import MedicalHistory from './Components/Medical/MedicalHistory';
 
 function App() {
   const user = localStorage.getItem("token");
@@ -42,9 +43,9 @@ function App() {
           <Route path="/calendar" element={<Calendar/>} />
           <Route path="/inbox" element={<Inbox />} />  {/* Changed from <inbox/> to <Inbox/> */}
           <Route path="/history" element={<History />} />  {/* Changed from <inbox/> to <Inbox/> */}
-          
+          <Route path="/medicalHistory" element={<MedicalHistory/>} />  {/* Changed from <inbox/> to <Inbox/> */}          
           <Route path="/appointments" element={user ? <Appointment /> : <Navigate to="/login" />} />
-          <Route path="/" element={<Navigate to="/login" />} />
+          <Route path="/" element={user ? <Navigate to="/dashboard" /> : <Navigate to="/login" />} />
           <Route path="/logout" element={<Logout />} />
 
 

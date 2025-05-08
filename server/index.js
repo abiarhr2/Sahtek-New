@@ -49,6 +49,8 @@ app.use("/api/auth", authRoutes);
 app.use('/api', appointmentRoutes);
 app.use("/api/history", historyRoutes);
 
+app.use("/api/records", require("./routes/medicalRecord"));
+
 // Health check endpoint
 app.get("/api/health", (req, res) => {
   res.status(200).json({ status: "OK", timestamp: new Date() });
