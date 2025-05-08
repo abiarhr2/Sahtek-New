@@ -7,8 +7,6 @@ import Appointment from './Components/Appointment/Appointment';
 import Staff from './Components/Staff/Staff';
 import Dashboard from './Components/UserDashboard/Dashboard';
 import Inbox from './Components/Inbox/Inbox';
-
-
 import Chatbox from './Components/Chatbox/Chatbox';
 import Account from './Components/Account/Account';
 
@@ -30,15 +28,18 @@ function App() {
         <Routes>
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
-          
+
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/staff" element={<Staff />} />
           <Route path="/chatbox" element={<Chatbox />} />
           <Route path="/account" element={<Account />} />
           <Route path="/inbox" element={<Inbox />} />
 
-          <Route path="/appointments" element={user ? <Appointment /> : <Navigate to="/login" />} />
-          <Route path="/" element={<Navigate to={user ? "/appointments" : "/login"} />} />
+          {/* ✅ Updated route for appointment */}
+          <Route path="/appointment" element={user ? <Appointment /> : <Navigate to="/login" />} />
+
+          {/* Redirect base URL to appointment or login */}
+          <Route path="/" element={<Navigate to={user ? "/appointment" : "/login"} />} />
         </Routes>
       </main>
     </div>

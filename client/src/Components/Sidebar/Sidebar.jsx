@@ -21,7 +21,7 @@ function Sidebar() {
   const menuItems = [
 
     { path: '/dashboard', label: 'Dashboard', icon: dashboardIcon },
-    { path: '/appointments', label: 'Appointments', icon: appointmentIcon },
+    { path: '/appointment', label: 'Appointment', icon: appointmentIcon },
     { path: '/staff', label: 'Staff', icon: staffIcon },
     { path: '/chatbox', label: 'ChatBox', icon: chatboxIcon },
     { path: '/inbox', label: 'Inbox', icon: inboxIcon },

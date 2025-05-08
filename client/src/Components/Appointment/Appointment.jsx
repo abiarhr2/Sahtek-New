@@ -1,7 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import './style.css';
 
 export default function Appointment() {
+  const location = useLocation();
+  const navigate = useNavigate();
+
   const [formData, setFormData] = useState({
     city: '',
     location: '',
@@ -11,7 +15,20 @@ export default function Appointment() {
     consultationType: '',
     problem: '',
     level: '',
+    providerName: '' // ✅ Include provider name
   });
+
+  useEffect(() => {
+    if (location.state) {
+      setFormData(prev => ({
+        ...prev,
+        city: location.state.city || '',
+        location: location.state.location || '',
+        hospital: location.state.hospital || '',
+        providerName: location.state.providerName || ''
+      }));
+    }
+  }, [location.state]);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -19,7 +36,7 @@ export default function Appointment() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
+
     try {
       const response = await fetch('http://localhost:3000/api/appointment', {
         method: 'POST',
@@ -28,15 +45,16 @@ export default function Appointment() {
         },
         body: JSON.stringify(formData)
       });
-  
+
       const result = await response.json();
-  
+
       if (response.ok) {
         alert('Appointment booked successfully!');
         console.log('Server Response:', result);
+        navigate('/dashboard');
       } else {
         console.error('Server responded with error:', result);
-        alert('Failed to book appointment: ' + result?.error || 'Unknown error');
+        alert('Failed to book appointment: ' + (result?.error || 'Unknown error'));
       }
     } catch (error) {
       console.error('Fetch failed:', error);
@@ -46,7 +64,6 @@ export default function Appointment() {
 
   return (
     <div className="container">
-      {/* Main Content */}
       <main className="main-content">
         <div className="topbar">
           <input className="search-bar" type="text" placeholder="Search Appointments, patients, etc" />
@@ -54,16 +71,28 @@ export default function Appointment() {
         </div>
 
         <form className="form" onSubmit={handleSubmit}>
-          <h2 className="form-title">Appointment Booking</h2>
+          {/* ✅ Back Button */}
+          <button
+            type="button"
+            onClick={() => navigate('/staff')}
+            style={{ backgroundColor: '#1e293b', color: 'white', padding: '8px 16px', borderRadius: '8px', marginBottom: '20px', border: 'none', cursor: 'pointer' }}
+          >
+            ← Back to Staff
+          </button>
+
+          <h2 className="form-title">
+            Book an Appointment
+            {formData.providerName && <span style={{ display: 'block', fontSize: '18px', marginTop: '5px' }}>with {formData.providerName}</span>}
+          </h2>
 
           <label>City Name</label>
-          <input name="city" placeholder="Name" onChange={handleChange} />
+          <input name="city" value={formData.city} placeholder="City" onChange={handleChange} />
 
           <label>Location</label>
-          <input name="location" placeholder="Upload location" onChange={handleChange} />
+          <input name="location" value={formData.location} placeholder="Upload location" onChange={handleChange} />
 
           <label>Hospital</label>
-          <input name="hospital" placeholder="Select Hospital" onChange={handleChange} />
+          <input name="hospital" value={formData.hospital} placeholder="Select Hospital" onChange={handleChange} />
 
           <label>Date</label>
           <input name="date" type="date" onChange={handleChange} />
