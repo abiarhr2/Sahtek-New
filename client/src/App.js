@@ -7,13 +7,10 @@ import Appointment from './Components/Appointment/Appointment';
 import Staff from './Components/Staff/Staff';
 import Dashboard from './Components/UserDashboard/Dashboard';
 import Inbox from './Components/Inbox/Inbox';
-<<<<<<< HEAD
-=======
 import Calendar from './Components/Calendar/Calendar';
 import Logout from './Components/Logout/Logout';
 import '@fontsource/quicksand'
 
->>>>>>> 469f61299d66360ea5c4cd8006be7cc4480f8dbf
 import Chatbox from './Components/Chatbox/Chatbox';
 import Account from './Components/Account/Account';
 import History from './Components/History/History';
@@ -37,23 +34,10 @@ function App() {
 
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
-<<<<<<< HEAD
-
-=======
->>>>>>> 469f61299d66360ea5c4cd8006be7cc4480f8dbf
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/staff" element={<Staff />} />
           <Route path="/chatbox" element={<Chatbox />} />
           <Route path="/account" element={<Account />} />
-<<<<<<< HEAD
-          <Route path="/inbox" element={<Inbox />} />
-
-          {/* ✅ Updated route for appointment */}
-          <Route path="/appointment" element={user ? <Appointment /> : <Navigate to="/login" />} />
-
-          {/* Redirect base URL to appointment or login */}
-          <Route path="/" element={<Navigate to={user ? "/appointment" : "/login"} />} />
-=======
           <Route path="/appointment" element={<Appointment />} />
           <Route path="/calendar" element={<Calendar/>} />
           <Route path="/inbox" element={<Inbox />} />  {/* Changed from <inbox/> to <Inbox/> */}
@@ -64,7 +48,6 @@ function App() {
           <Route path="/logout" element={<Logout />} />
 
 
->>>>>>> 469f61299d66360ea5c4cd8006be7cc4480f8dbf
         </Routes>
       </main>
     </div>

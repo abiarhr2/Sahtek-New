@@ -15,25 +15,6 @@ export default function Appointment() {
     consultationType: '',
     problem: '',
     level: '',
-<<<<<<< HEAD
-    providerName: '' // ✅ Include provider name
-  });
-
-  useEffect(() => {
-    if (location.state) {
-      setFormData(prev => ({
-        ...prev,
-        city: location.state.city || '',
-        location: location.state.location || '',
-        hospital: location.state.hospital || '',
-        providerName: location.state.providerName || ''
-      }));
-    }
-  }, [location.state]);
-
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-=======
     patientName: '',
     patientEmail: '',
     doctor: ''
@@ -64,7 +45,6 @@ export default function Appointment() {
     setAvailableTimes([]);
     setLocations(getLocations(city));
     setConsultationTypes([]);
->>>>>>> 469f61299d66360ea5c4cd8006be7cc4480f8dbf
   };
 
   // Get locations based on city
@@ -123,8 +103,6 @@ export default function Appointment() {
   // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
-<<<<<<< HEAD
-=======
     const requiredFields = ['patientName', 'patientEmail', 'city', 'location', 'hospital', 'date', 'time', 'consultationType', 'problem', 'level'];
     const missingFields = requiredFields.filter(field => !formData[field].trim());
 
@@ -135,7 +113,6 @@ export default function Appointment() {
 
     setIsSubmitting(true);
     setError('');
->>>>>>> 469f61299d66360ea5c4cd8006be7cc4480f8dbf
 
     try {
       const response = await fetch('http://localhost:3000/api/appointments', {
@@ -145,17 +122,6 @@ export default function Appointment() {
       });
 
       const result = await response.json();
-<<<<<<< HEAD
-
-      if (response.ok) {
-        alert('Appointment booked successfully!');
-        console.log('Server Response:', result);
-        navigate('/dashboard');
-      } else {
-        console.error('Server responded with error:', result);
-        alert('Failed to book appointment: ' + (result?.error || 'Unknown error'));
-      }
-=======
       if (!response.ok) throw new Error(result.message || 'Failed to book appointment');
 
       alert('Appointment booked successfully!');
@@ -175,7 +141,6 @@ export default function Appointment() {
       setFilteredDoctors([]);
       setAvailableTimes([]);
 
->>>>>>> 469f61299d66360ea5c4cd8006be7cc4480f8dbf
     } catch (error) {
       console.error('Booking error:', error);
       setError(error.message || 'Something went wrong. Please try again.');
@@ -208,16 +173,6 @@ export default function Appointment() {
             {formData.providerName && <span style={{ display: 'block', fontSize: '18px', marginTop: '5px' }}>with {formData.providerName}</span>}
           </h2>
 
-<<<<<<< HEAD
-          <label>City Name</label>
-          <input name="city" value={formData.city} placeholder="City" onChange={handleChange} />
-
-          <label>Location</label>
-          <input name="location" value={formData.location} placeholder="Upload location" onChange={handleChange} />
-
-          <label>Hospital</label>
-          <input name="hospital" value={formData.hospital} placeholder="Select Hospital" onChange={handleChange} />
-=======
           <label>Your Name*</label>
           <input name="patientName" placeholder="Full Name" onChange={handleChange} value={formData.patientName} required />
 
@@ -232,7 +187,6 @@ export default function Appointment() {
               <option key={i} value={city}>{city}</option>
             ))}
           </select>
->>>>>>> 469f61299d66360ea5c4cd8006be7cc4480f8dbf
 
           {/* Location Selection */}
           {formData.city && (
