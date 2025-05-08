@@ -7,7 +7,7 @@ import Appointment from './Components/Appointment/Appointment';
 import Staff from './Components/Staff/Staff';
 import Dashboard from './Components/UserDashboard/Dashboard';
 import Inbox from './Components/Inbox/Inbox';
-
+import Calendar from './Components/Calendar/Calendar';
 
 import Chatbox from './Components/Chatbox/Chatbox';
 import Account from './Components/Account/Account';
@@ -30,7 +30,7 @@ function App() {
         <Routes>
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
-          
+          <Route path="/calendar" element={<Calendar />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/staff" element={<Staff />} />
           <Route path="/chatbox" element={<Chatbox />} />

@@ -10,7 +10,7 @@ const appointmentRoutes = require("./routes/appointment"); // correctly lowercas
 const app = express();
 
 // Connect to MongoDB
-connection();
+
 
 // Middleware
 app.use(cors());
