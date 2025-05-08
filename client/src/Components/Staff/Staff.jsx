@@ -44,7 +44,8 @@ const Staff = () => {
             city: provider.city,
             location: provider.location,
             hospital: provider.location,
-            providerName: provider.name
+            providerName: provider.name,
+            availableDays: provider.availableDays || [] // ✅ pass availability
           }
         })
       }

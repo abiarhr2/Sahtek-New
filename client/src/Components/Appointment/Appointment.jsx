@@ -15,18 +15,32 @@ export default function Appointment() {
     consultationType: '',
     problem: '',
     level: '',
-    providerName: '' // ✅ Include provider name
+    providerName: ''
   });
+
+  const [providerAvailability, setProviderAvailability] = useState([]);
+  const defaultTimeSlots = ["09:00", "11:00", "14:00"];
 
   useEffect(() => {
     if (location.state) {
+      const { city, location: loc, hospital, providerName, availableDays = [] } = location.state;
+
       setFormData(prev => ({
         ...prev,
-        city: location.state.city || '',
-        location: location.state.location || '',
-        hospital: location.state.hospital || '',
-        providerName: location.state.providerName || ''
+        city: city || '',
+        location: loc || '',
+        hospital: hospital || '',
+        providerName: providerName || ''
       }));
+
+      // Generate [day, time] pairs
+      const availability = [];
+      availableDays.forEach(day => {
+        defaultTimeSlots.forEach(time => {
+          availability.push({ day, time });
+        });
+      });
+      setProviderAvailability(availability);
     }
   }, [location.state]);
 
@@ -34,11 +48,20 @@ export default function Appointment() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  const handleAvailabilityClick = (day, time) => {
+    setFormData(prev => ({
+      ...prev,
+      date: day,
+      time: time
+    }));
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      const response = await fetch('http://localhost:3000/api/appointment', {
+      const response = await fetch('http://localhost:5000/api/appointment', {
+
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -71,34 +94,72 @@ export default function Appointment() {
         </div>
 
         <form className="form" onSubmit={handleSubmit}>
-          {/* ✅ Back Button */}
+          {/* Back Button */}
           <button
             type="button"
             onClick={() => navigate('/staff')}
-            style={{ backgroundColor: '#1e293b', color: 'white', padding: '8px 16px', borderRadius: '8px', marginBottom: '20px', border: 'none', cursor: 'pointer' }}
+            style={{
+              backgroundColor: '#1e293b',
+              color: 'white',
+              padding: '8px 16px',
+              borderRadius: '8px',
+              marginBottom: '20px',
+              border: 'none',
+              cursor: 'pointer'
+            }}
           >
             ← Back to Staff
           </button>
 
           <h2 className="form-title">
             Book an Appointment
-            {formData.providerName && <span style={{ display: 'block', fontSize: '18px', marginTop: '5px' }}>with {formData.providerName}</span>}
+            {formData.providerName && (
+              <span style={{ display: 'block', fontSize: '18px', marginTop: '5px' }}>
+                with {formData.providerName}
+              </span>
+            )}
           </h2>
 
+          {/* Availability Buttons */}
+          {providerAvailability.length > 0 && (
+            <>
+              <label>Choose from available slots</label>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', marginBottom: '1rem' }}>
+                {providerAvailability.map(({ day, time }, index) => (
+                  <button
+                    key={index}
+                    type="button"
+                    onClick={() => handleAvailabilityClick(day, time)}
+                    style={{
+                      padding: '8px 14px',
+                      backgroundColor: '#0d9488',
+                      color: 'white',
+                      border: 'none',
+                      borderRadius: '8px',
+                      cursor: 'pointer'
+                    }}
+                  >
+                    {day} at {time}
+                  </button>
+                ))}
+              </div>
+            </>
+          )}
+
           <label>City Name</label>
-          <input name="city" value={formData.city} placeholder="City" onChange={handleChange} />
+          <input name="city" value={formData.city} onChange={handleChange} />
 
           <label>Location</label>
-          <input name="location" value={formData.location} placeholder="Upload location" onChange={handleChange} />
+          <input name="location" value={formData.location} onChange={handleChange} />
 
           <label>Hospital</label>
-          <input name="hospital" value={formData.hospital} placeholder="Select Hospital" onChange={handleChange} />
+          <input name="hospital" value={formData.hospital} onChange={handleChange} />
 
           <label>Date</label>
-          <input name="date" type="date" onChange={handleChange} />
+          <input name="date" value={formData.date} placeholder="Click an availability above or type manually" onChange={handleChange} />
 
           <label>Time</label>
-          <input name="time" type="time" onChange={handleChange} />
+          <input name="time" value={formData.time} placeholder="e.g. 11:00" onChange={handleChange} />
 
           <label>Consultation Type</label>
           <input name="consultationType" placeholder="Select Consultation type" onChange={handleChange} />

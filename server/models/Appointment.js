@@ -1,11 +1,16 @@
+const mongoose = require('mongoose');
+
 const appointmentSchema = new mongoose.Schema({
+  providerName: { type: String, required: true }, // replaces doctorName
   city: String,
   location: String,
   hospital: String,
-  date: String,
+  date: String, // <- accept "Wednesday" as-is
   time: String,
   consultationType: String,
   problem: String,
   level: String,
-  providerName: String // ✅ Add this
-}, { timestamps: true });
+  status: { type: String, default: 'Pending' }
+});
+
+module.exports = mongoose.model('Appointment', appointmentSchema);
