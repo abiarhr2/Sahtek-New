@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './Staff.css';
 
@@ -13,6 +14,8 @@ const Staff = () => {
 
   const [results, setResults] = useState([]);
   const [loading, setLoading] = useState(false);
+
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -33,7 +36,20 @@ const Staff = () => {
   };
 
   const StaffCard = ({ provider }) => (
-    <div className="staff-card">
+    <div
+      className="staff-card"
+      onClick={() =>
+        navigate('/appointment', {
+          state: {
+            city: provider.city,
+            location: provider.location,
+            hospital: provider.location,
+            providerName: provider.name
+          }
+        })
+      }
+      style={{ cursor: 'pointer' }}
+    >
       <div className="profile-pic" />
       <h4>{provider.name || 'Unknown'}</h4>
       <p>{provider.specialty || 'Generalist'}</p>

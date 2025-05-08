@@ -16,7 +16,11 @@
     "react": "^19.0.0",
     "react-big-calendar": "^1.18.0",
     "react-dom": "^19.0.0",
+<<<<<<< HEAD
+    "react-icons": "^5.5.0",
+=======
     "react-hook-form": "^7.56.2",
+>>>>>>> 469f61299d66360ea5c4cd8006be7cc4480f8dbf
     "react-router-dom": "^7.2.0",
     "react-scripts": "^5.0.1",
     "web-vitals": "^2.1.4",
