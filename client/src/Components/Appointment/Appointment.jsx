@@ -1,7 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import './style.css';
 
 export default function Appointment() {
+  const location = useLocation();
+  const navigate = useNavigate();
+
   const [formData, setFormData] = useState({
     city: '',
     location: '',
@@ -155,7 +159,19 @@ export default function Appointment() {
         {error && <div className="error-message">{error}</div>}
 
         <form className="form" onSubmit={handleSubmit}>
-          <h2 className="form-title">Appointment Booking</h2>
+          {/* ✅ Back Button */}
+          <button
+            type="button"
+            onClick={() => navigate('/staff')}
+            style={{ backgroundColor: '#1e293b', color: 'white', padding: '8px 16px', borderRadius: '8px', marginBottom: '20px', border: 'none', cursor: 'pointer' }}
+          >
+            ← Back to Staff
+          </button>
+
+          <h2 className="form-title">
+            Book an Appointment
+            {formData.providerName && <span style={{ display: 'block', fontSize: '18px', marginTop: '5px' }}>with {formData.providerName}</span>}
+          </h2>
 
           <label>Your Name*</label>
           <input name="patientName" placeholder="Full Name" onChange={handleChange} value={formData.patientName} required />

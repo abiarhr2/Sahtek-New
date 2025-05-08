@@ -1,49 +1,39 @@
-.main-content {
-  margin-left: 260px; /* same as .sidebar width */
-  padding: 2rem; /* optional for spacing inside */
-}
-
-
+/* Sidebar */
 .sidebar {
-  width: 260px;
-  background-color: #66D2CE!important;
-  height: 100vh;
+  width: 240px; /* Original width */
+  background-color: #66D2CE;
+  height: 100vh; /* Full height */
   padding: 1.5rem 1rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  position: fixed;
+  position: fixed; /* Fixed on the left side */
   top: 0;
   left: 0;
   overflow-y: auto;
-  box-shadow: 4px 0px 20px rgba(0, 0, 0, 0.15);
-  transition: all 0.3s ease;
+  z-index: 100; /* Ensure sidebar stays on top */
 }
 
+/* Logo Section */
 .logo-container {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 1rem;
-  padding-top: 0.5rem;
-  padding-bottom: 0!important; /* no extra bottom padding */
 }
 
 .logo-image {
-  width: 320px;  /* Bigger logo */
+  width: 320px;
   height: 150px;
   object-fit: contain;
-  margin: 0;
-  padding: 0;
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.2)); /* subtle shadow */
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.2));
 }
 
-
+/* Menu List */
 .menu-list {
   list-style: none;
   padding: 0;
   margin: 0;
-  flex-grow: 1;
 }
 
 .menu-list li {
@@ -60,23 +50,17 @@
   font-family: "Segoe UI", sans-serif;
   font-size: 1rem;
   transition: all 0.2s ease;
+  width: 100%;
+  box-sizing: border-box;
 }
 
+/* Menu Item Hover Effect */
 .menu-list li a:hover {
   background-color: rgba(255, 255, 255, 0.15);
   transform: translateX(6px);
 }
 
-.menu-icon {
-  width: 24px;
-  height: 24px;
-  margin-right: 14px;
-}
-
-.menu-label {
-  font-weight: 500;
-}
-
+/* Active Link Styling */
 .active-link a {
   background-color: #4EB7B3; /* Darker turquoise */
   color: white;
@@ -84,15 +68,16 @@
   transform: scale(1.07);
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
   border-left: 4px solid #ffffff;
-  z-index: 1;
 }
 
+/* Bottom Section (Logout link) */
 .bottom-section {
   margin-top: auto;
   padding-top: 1rem;
   border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 
+/* Logout Link */
 .logout-link {
   display: flex;
   align-items: center;
@@ -101,9 +86,43 @@
   padding: 0.75rem 1rem;
   border-radius: 4px;
   transition: all 0.2s ease;
+  width: 100%;
 }
 
+/* Logout Link Hover Effect */
 .logout-link:hover {
   background-color: rgba(255, 255, 255, 0.15);
   transform: translateX(6px);
+}
+
+/* Icon Consistency */
+.menu-icon {
+  width: 24px;  /* Set a consistent size for the icons */
+  height: 24px; /* Ensure they are square */
+  object-fit: contain;
+  margin-right: 12px; /* Space between icon and label */
+}
+
+/* Main Content */
+.main-content {
+  margin-left: 240px; /* Sidebar width */
+  padding: 2rem;
+  transition: margin-left 0.3s ease;
+  overflow-x: hidden;
+  height: 100vh;
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    position: relative;
+    height: auto;
+    box-shadow: none;
+  }
+
+  .main-content {
+    margin-left: 0;
+    padding: 1rem;
+  }
 }

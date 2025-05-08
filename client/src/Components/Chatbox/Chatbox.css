@@ -1,6 +1,9 @@
 .main-content {
   margin-left: 220px;
   padding: 2rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 
 .chatbox-container {
@@ -17,20 +20,24 @@
   flex-direction: column;
   transition: all 0.4s ease;
   animation: fadeIn 0.8s ease-in;
+  max-width: 1200px; /* Adjust width as needed */
+  width: 100%;
+  margin-left: auto;  /* Centering the chatbox within the content */
+  margin-right: auto; /* Centering the chatbox within the content */
 }
 
 .chat-header {
   text-align: center;
   margin-bottom: 1.5rem;
   animation: fadeInDown 1s ease;
+  color: white;
 }
 
 .chat-header h2 {
   font-size: 2.8rem;
   font-weight: 700;
-  color: #00c6ff;
-  background: -webkit-linear-gradient(45deg,#66D2CE, #66D2CE);
-;
+  color: white!important;
+  background: #66D2CE;
   -webkit-text-fill-color: transparent;
   margin-bottom: 0.3rem;
 }
