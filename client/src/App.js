@@ -38,7 +38,7 @@ function App() {
           <Route path="/history" element={<History />} />  {/* Changed from <inbox/> to <Inbox/> */}
           
           <Route path="/appointments" element={user ? <Appointment /> : <Navigate to="/login" />} />
-          <Route path="/" element={<Navigate to={user ? "/appointments" : "/login"} />} />
+          <Route path="/" element={<Navigate to={user ? "/Dashboard" : "/login"} />} />
         </Routes>
       </main>
     </div>
