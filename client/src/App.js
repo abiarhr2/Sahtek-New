@@ -8,6 +8,8 @@ import Staff from './Components/Staff/Staff';
 import Dashboard from './Components/UserDashboard/Dashboard';
 import Inbox from './Components/Inbox/Inbox';
 import Calendar from './Components/Calendar/Calendar';
+import Logout from './Components/Logout/Logout';
+
 
 import Chatbox from './Components/Chatbox/Chatbox';
 import Account from './Components/Account/Account';
@@ -39,6 +41,8 @@ function App() {
           <Route path="/inbox" element={<Inbox />} />
           <Route path="/appointments" element={user ? <Appointment /> : <Navigate to="/login" />} />
           <Route path="/" element={<Navigate to="/login" />} />
+          <Route path="/logout" element={<Logout />} />
+
 
         </Routes>
       </main>git merge your-branch-name
