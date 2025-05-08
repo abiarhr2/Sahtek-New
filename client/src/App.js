@@ -7,7 +7,7 @@ import Appointment from './Components/Appointment/Appointment';
 import Staff from './Components/Staff/Staff'
 import Dashboard from './Components/UserDashboard/Dashboard';
 import Inbox from './Components/Inbox/Inbox';
-
+import Logout from './Components/Logout';
 
 import Chatbox from './Components/Chatbox/Chatbox';
 import Account from './Components/Account/Account';
@@ -36,6 +36,8 @@ function App() {
           <Route path="/chatbox" element={<Chatbox />} />
           <Route path="/account" element={<Account />} />
           <Route path="/inbox" element={<Inbox />} />
+
+          <Route path="/logout" element={<Logout />} />
 
           <Route path="/appointments" element={user ? <Appointment /> : <Navigate to="/login" />} />
           <Route path="/" element={<Navigate to={user ? "/appointments" : "/login"} />} />
