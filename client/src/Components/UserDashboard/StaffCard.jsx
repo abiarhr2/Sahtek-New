@@ -10,7 +10,7 @@ const StaffCard = () => {
     <div className="card">
       <h3>Meet Our Hospital Staff</h3>
       <p>Explore the profiles and specialties of our dedicated hospital staff.</p>
-      <button className="green-btn" onClick={() => navigate('/staffcard')}>
+      <button className="green-btn" onClick={() => navigate('/staff')}>
         View Staff
       </button>
     </div>

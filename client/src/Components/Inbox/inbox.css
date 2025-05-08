@@ -1,0 +1,25 @@
+.inbox-container {
+    display: flex;
+    height: 100%;
+    background: #fff;
+  }
+  
+  .message-list-container {
+    width: 35%;
+    border-right: 1px solid #e0e0e0;
+    overflow-y: auto;
+  }
+  
+  .message-view-container {
+    width: 65%;
+    padding: 20px;
+    overflow-y: auto;
+  }
+  
+  .empty-message-view {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    color: #888;
+  }

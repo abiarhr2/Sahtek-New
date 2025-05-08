@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 import { Link, useLocation } from 'react-router-dom';
@@ -11,7 +10,6 @@ import staffIcon from '../../assets/staff.png';
 import chatboxIcon from '../../assets/chatbox.png';
 import inboxIcon from '../../assets/inbox.png';
 import accountIcon from '../../assets/account.png';
-import settingsIcon from '../../assets/settings.png';
 import logoutIcon from '../../assets/logout.png';
 import logoIcon from '../../assets/logo.png';
 // Importing logo
@@ -29,7 +27,6 @@ function Sidebar() {
     { path: '/account', label: 'Account', icon: accountIcon },
     { path: '/history', label: 'History', icon: dashboardIcon }, // reuse dashboard icon
     { path: '/calendar', label: 'Calendar', icon: dashboardIcon }, // reuse dashboard icon
-    { path: '/settings', label: 'Settings', icon: settingsIcon },
 
   ];
 
