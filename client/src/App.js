@@ -28,6 +28,7 @@ function App() {
       {/* Main Content Area */}
       <main className="main-content">
         <Routes>
+
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
           <Route path="/calendar" element={<Calendar />} />
@@ -36,9 +37,9 @@ function App() {
           <Route path="/chatbox" element={<Chatbox />} />
           <Route path="/account" element={<Account />} />
           <Route path="/inbox" element={<Inbox />} />
-
           <Route path="/appointments" element={user ? <Appointment /> : <Navigate to="/login" />} />
-          <Route path="/" element={<Navigate to={user ? "/appointments" : "/login"} />} />
+          <Route path="/" element={<Navigate to="/login" />} />
+
         </Routes>
       </main>
     </div>

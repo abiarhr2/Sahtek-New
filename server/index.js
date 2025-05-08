@@ -3,8 +3,9 @@ const express = require("express");
 const cors = require("cors");
 const connection = require("./config/db");
 
-const userRoutes = require("./routes/user");
 const authRoutes = require("./routes/auth");
+const userRoutes = require("./routes/user");
+
 const appointmentRoutes = require("./routes/appointment"); // correctly lowercase
 
 const app = express();
@@ -17,10 +18,11 @@ app.use(cors());
 app.use(express.json());
 
 // API Routes
-app.use("/api/users", userRoutes);
 app.use("/api/auth", authRoutes);
-app.use("/api/appointment", appointmentRoutes); // POST /api/appointment
+app.use("/api/users", userRoutes);
 
+app.use("/api/appointment", appointmentRoutes); // POST /api/appointment
+//app.use('/api/calendar', calendarRoutes);
 // Start Server
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`🚀 Server running on http://localhost:${PORT}`));
