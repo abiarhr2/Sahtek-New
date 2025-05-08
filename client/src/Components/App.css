@@ -1,4 +1,6 @@
 /* General container styling */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600&display=swap');
+
 .container {
     display: flex;
     justify-content: center;

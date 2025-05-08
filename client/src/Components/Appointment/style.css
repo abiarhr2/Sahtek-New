@@ -1,143 +1,239 @@
 /* Layout */
 .container {
-    display: flex;
-    min-height: 100vh;
-    font-family: sans-serif;
-  }
+  display: flex;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 240px;
+  background-color: #0d9488;
+  color: white;
+  padding: 30px 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 40px;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.nav a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  padding: 12px 15px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+.nav a:hover {
+  background-color: #0f766e;
+}
+
+/* Main Content */
+.main-content {
+  flex: 1;
+  background-color: #ffffff;
+  padding: 40px;
   
-  .sidebar {
-    width: 220px;
-    background-color: #0d9488;
-    color: white;
-    padding: 20px;
-  }
-  
-  .logo {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 30px;
-  }
-  
-  .nav a {
-    display: block;
-    color: white;
-    text-decoration: none;
-    padding: 10px;
-    margin-bottom: 5px;
-    border-radius: 4px;
-  }
-  
-  .nav a:hover {
-    background-color: #0f766e;
-  }
-  
-  .main-content {
-    flex: 1;
-    background-color: #f2f2f2;
-    padding: 30px;
-  }
-  
-  /* Top bar */
-  .topbar {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-  }
-  
-  .search-bar {
-    padding: 10px;
-    width: 60%;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  .user-icon {
-    font-size: 24px;
-  }
-  
-  /* Form */
-  .form {
-    background-color: #2dd4bf;
-    padding: 30px;
-    border-radius: 20px;
-    max-width: 600px;
-    margin: 0 auto;
-  }
-  
-  .form-title {
-    font-size: 22px;
-    font-weight: bold;
-    margin-bottom: 20px;
-  }
-  
-  .form label {
-    display: block;
-    margin-top: 15px;
-    margin-bottom: 5px;
-    font-weight: 600;
-  }
-  
-  .form input,
-  .form textarea {
-    width: 100%;
-    padding: 12px;
-    border-radius: 8px;
-    border: none;
-    margin-bottom: 5px;
-    font-size: 16px;
-  }
-  
-  /* Priority Buttons */
-  .priority-buttons {
-    display: flex;
-    justify-content: space-between;
-    margin: 15px 0;
-  }
-  
-  .priority-btn {
-    padding: 10px 20px;
-    border-radius: 30px;
-    color: white;
-    font-weight: bold;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .priority-btn.urgent {
-    background-color: red;
-  }
-  
-  .priority-btn.high {
-    background-color: orange;
-  }
-  
-  .priority-btn.medium {
-    background-color: gold;
-    color: black;
-  }
-  
-  .priority-btn.normal {
-    background-color: green;
-  }
-  
-  .priority-btn.active {
-    outline: 2px solid white;
-  }
-  
-  /* Submit Button */
-  .submit-btn {
-    background-color: #1e293b;
-    color: white;
-    font-size: 18px;
-    width: 100%;
-    padding: 12px;
-    border-radius: 8px;
-    border: none;
-    margin-top: 20px;
-    cursor: pointer;
-  }
-  
-  .submit-btn:hover {
-    background-color: #0f172a;
-  }
-  
+}
+
+
+
+.user-icon {
+  font-size: 30px; 
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+/* Form */
+.form {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 700px;
+  width: 100%;  /* Ensure form takes up 100% width of its max-width */
+  margin: 0 auto;
+  min-height: 400px;  /* Ensure the form has a minimum height */
+  box-sizing: border-box; /* Include padding in the element's total width/height */
+}
+
+.form-title {
+  font-size: 26px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  text-align: center;
+  color: #333;
+}
+
+.form label {
+  display: block;
+  margin-top: 18px;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #555;
+  margin-right: 50px;
+}
+
+.form input,
+.form textarea {
+  width: 100%;
+  padding: 14px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  margin-bottom: 15px;
+  font-size: 16px;
+  background-color: #f9f9f9;
+  box-sizing: border-box;  /* Include padding in the element's total width/height */
+}
+
+
+.form input:focus,
+.form textarea:focus {
+  border-color: #0d9488;
+  outline: none;
+  box-shadow: 0 0 5px rgba(13, 148, 136, 0.2);
+}
+
+/* Priority Buttons */
+.priority-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin: 25px 0;
+}
+
+.priority-btn {
+  padding: 12px 25px;
+  border-radius: 30px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  width: 22%;
+}
+
+.priority-btn.urgent {
+  background-color: #f44336;
+  color: white;
+}
+
+.priority-btn.high {
+  background-color: #ff9800;
+  color: white;
+}
+
+.priority-btn.medium {
+  background-color: #ffeb3b;
+  color: black;
+}
+
+.priority-btn.normal {
+  background-color: #4caf50;
+  color: white;
+}
+
+.priority-btn.active {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Submit Button */
+.submit-btn {
+  background-color: #0d9488;
+  color: white;
+  font-size: 18px;
+  width: 100%;
+  padding: 14px;
+  border-radius: 8px;
+  border: none;
+  margin-top: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #0f766e;
+}
+
+/* Consultation Type */
+.consultation-type-placeholder {
+  background: #f5f5f5;
+  padding: 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: center;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  margin-bottom: 15px;
+  transition: background-color 0.3s ease;
+}
+
+.consultation-type-placeholder:hover {
+  background-color: #ececec;
+}
+
+.consultation-type-list {
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  max-height: 150px;
+  overflow-y: auto;
+  position: absolute;
+  width: 100%;
+  top: 100px;
+  z-index: 10;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.consultation-type-item {
+  padding: 14px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.consultation-type-item:hover {
+  background-color: #f0f0f0;
+}
+
+/* Dropdown Styles */
+select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  width: 100%;
+  background-color: #f9f9f9;
+  margin-bottom: 15px;
+}
+
+select:focus {
+  outline: none;
+  border-color: #007bff;
+  background-color: #e9f5ff;
+}
+
+select option {
+  font-size: 16px;
+  padding: 10px;
+}
+
+/* Optional: Style the container around dropdown */
+.dropdown-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.dropdown-wrapper label {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
