@@ -1,5 +1,3 @@
-const mongoose = require('mongoose');
-
 const appointmentSchema = new mongoose.Schema({
   city: String,
   location: String,
@@ -8,7 +6,6 @@ const appointmentSchema = new mongoose.Schema({
   time: String,
   consultationType: String,
   problem: String,
-  level: String
+  level: String,
+  providerName: String // ✅ Add this
 }, { timestamps: true });
-
-module.exports = mongoose.model('Appointment', appointmentSchema);
