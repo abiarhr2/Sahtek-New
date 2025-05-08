@@ -30,7 +30,7 @@
   font-weight: 700;
   color: #00c6ff;
   background: -webkit-linear-gradient(45deg,#66D2CE, #66D2CE);
-  -webkit-background-clip: text;
+;
   -webkit-text-fill-color: transparent;
   margin-bottom: 0.3rem;
 }

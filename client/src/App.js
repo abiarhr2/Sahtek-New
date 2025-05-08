@@ -9,7 +9,7 @@ import Dashboard from './Components/UserDashboard/Dashboard';
 import Inbox from './Components/Inbox/Inbox';
 import Calendar from './Components/Calendar/Calendar';
 import Logout from './Components/Logout/Logout';
-
+import '@fontsource/quicksand'
 
 import Chatbox from './Components/Chatbox/Chatbox';
 import Account from './Components/Account/Account';
@@ -39,6 +39,7 @@ function App() {
           <Route path="/chatbox" element={<Chatbox />} />
           <Route path="/account" element={<Account />} />
           <Route path="/appointment" element={<Appointment />} />
+          <Route path="/calendar" element={<Calendar/>} />
           <Route path="/inbox" element={<Inbox />} />  {/* Changed from <inbox/> to <Inbox/> */}
           <Route path="/history" element={<History />} />  {/* Changed from <inbox/> to <Inbox/> */}
           
@@ -48,8 +49,7 @@ function App() {
 
 
         </Routes>
-      </main>git merge your-branch-name
-
+      </main>
     </div>
   );
 }

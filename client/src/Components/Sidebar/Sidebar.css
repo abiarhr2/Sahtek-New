@@ -1,8 +1,12 @@
-/* src/Components/Sidebar.css */
+.main-content {
+  margin-left: 260px; /* same as .sidebar width */
+  padding: 2rem; /* optional for spacing inside */
+}
+
 
 .sidebar {
-  width: 250px;
-  background-color: #66D2CE;
+  width: 260px;
+  background-color: #66D2CE!important;
   height: 100vh;
   padding: 1.5rem 1rem;
   display: flex;
@@ -12,30 +16,28 @@
   top: 0;
   left: 0;
   overflow-y: auto;
-  box-shadow: 4px 0px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 4px 0px 20px rgba(0, 0, 0, 0.15);
   transition: all 0.3s ease;
 }
 
 .logo-container {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0!important; /* no extra bottom padding */
 }
 
 .logo-image {
-  width: 60px;
-  height: 60px;
+  width: 320px;  /* Bigger logo */
+  height: 150px;
   object-fit: contain;
-  margin-bottom: 0.5rem;
+  margin: 0;
+  padding: 0;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.2)); /* subtle shadow */
 }
 
-.logo-text {
-  color: white;
-  font-size: 1.7rem;
-  font-weight: bold;
-  font-family: 'Poppins', cursive;
-}
 
 .menu-list {
   list-style: none;
@@ -45,7 +47,7 @@
 }
 
 .menu-list li {
-  margin: 0.5rem 0;
+  margin: 0.4rem 0;
 }
 
 .menu-list li a {
@@ -53,38 +55,42 @@
   align-items: center;
   text-decoration: none;
   color: white;
-  padding: 0.7rem 1rem;
-  border-radius: 12px;
-  transition: background-color 0.3s, transform 0.2s;
+  padding: 0.75rem 1rem;
+  border-radius: 4px;
+  font-family: "Segoe UI", sans-serif;
+  font-size: 1rem;
+  transition: all 0.2s ease;
 }
 
 .menu-list li a:hover {
-  background-color: rgba(255, 255, 255, 0.25);
-  transform: translateX(8px);
+  background-color: rgba(255, 255, 255, 0.15);
+  transform: translateX(6px);
 }
 
 .menu-icon {
-  width: 22px;
-  height: 22px;
-  margin-right: 15px;
+  width: 24px;
+  height: 24px;
+  margin-right: 14px;
 }
 
 .menu-label {
-  font-size: 1.1rem;
   font-weight: 500;
-  font-family: 'Poppins', sans-serif;
 }
 
 .active-link a {
-  background-color: rgba(255, 255, 255, 0.5);
-  color: #004c48;
-  font-weight: bold;
+  background-color: #4EB7B3; /* Darker turquoise */
+  color: white;
+  font-weight: 700;
+  transform: scale(1.07);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
+  border-left: 4px solid #ffffff;
+  z-index: 1;
 }
 
 .bottom-section {
   margin-top: auto;
   padding-top: 1rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .logout-link {
@@ -92,12 +98,12 @@
   align-items: center;
   text-decoration: none;
   color: white;
-  padding: 0.7rem 1rem;
-  border-radius: 12px;
-  transition: background-color 0.3s, transform 0.2s;
+  padding: 0.75rem 1rem;
+  border-radius: 4px;
+  transition: all 0.2s ease;
 }
 
 .logout-link:hover {
-  background-color: rgba(255, 255, 255, 0.25);
-  transform: translateX(8px);
+  background-color: rgba(255, 255, 255, 0.15);
+  transform: translateX(6px);
 }

@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Link, useLocation } from 'react-router-dom';
 import './Sidebar.css';
-
+import '@fontsource/quicksand'
 // Importing icons
 import dashboardIcon from '../../assets/dashboard.png';
 import appointmentIcon from '../../assets/appointment.png';
@@ -34,7 +34,6 @@ function Sidebar() {
     <div className="sidebar">
       <div className="logo-container">
         <img src={logoIcon} alt="Logo" className="logo-image" />
-        <h2 className="logo-text">Sahtna</h2>
       </div>
       <ul className="menu-list">
         {menuItems.map((item, index) => (
