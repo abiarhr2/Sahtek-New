@@ -1,0 +1,107 @@
+/* margin-left fix because of sidebar */
+.main-content {
+    margin-left: 220px;
+    padding: 2rem;
+  }
+  
+  /* Page layout */
+  .history-page {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .history-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #222;
+    border-bottom: 3px solid #66D2CE;
+    width: fit-content;
+    padding-bottom: 5px;
+  }
+  
+  /* Appointment Cards */
+  .appointments-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .appointment-card {
+    background: #f8f9fa;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+  }
+  
+  .appointment-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+  }
+  
+  .appointment-info h3 {
+    margin: 0;
+    font-size: 1.4rem;
+    color: #333;
+  }
+  
+  .appointment-info p {
+    margin: 4px 0;
+    color: #666;
+    font-size: 0.95rem;
+  }
+  
+  /* Right side of card */
+  .appointment-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.5rem;
+  }
+  
+  .appointment-date {
+    font-size: 0.9rem;
+    color: #999;
+  }
+  
+  .urgency {
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-align: center;
+  }
+  
+  .urgency.urgent {
+    background-color: #ff4d4d;
+    color: white;
+  }
+  
+  .urgency.medium {
+    background-color: #f5b400;
+    color: white;
+  }
+  
+  .urgency.normal {
+    background-color: #28c76f;
+    color: white;
+  }
+  
+  /* Load more */
+  .load-more {
+    text-align: center;
+    color: #666;
+    font-size: 0.95rem;
+    cursor: pointer;
+    margin-top: 2rem;
+    transition: color 0.3s;
+  }
+  
+  .load-more:hover {
+    color: #66D2CE;
+  }
+  
