@@ -1,0 +1,45 @@
+.message-view {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  
+  .message-view-header {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+  }
+  
+  .message-view-header h3 {
+    margin: 0 0 10px;
+  }
+  
+  .message-meta {
+    display: flex;
+    gap: 15px;
+    font-size: 13px;
+    color: #666;
+  }
+  
+  .message-content {
+    flex-grow: 1;
+    padding: 10px 0;
+  }
+  
+  .message-actions {
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+  }
+  
+  .reply-button {
+    background-color: #2196f3;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .reply-button:hover {
+    background-color: #0d8bf2;
+  }

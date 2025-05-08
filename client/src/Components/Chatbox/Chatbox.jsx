@@ -1,4 +1,4 @@
-// src/Components/ChatBox.jsx
+// client/src/Components/ChatBox.jsx
 import React, { useState } from 'react';
 import './Chatbox.css';
 
@@ -6,11 +6,24 @@ function ChatBox() {
   const [message, setMessage] = useState('');
   const [chatLog, setChatLog] = useState([]);
 
-  const handleSend = () => {
+  const handleSend = async () => {
     if (message.trim() !== '') {
       setChatLog([...chatLog, { sender: 'user', text: message }]);
       setMessage('');
-      // Here you could add fake bot replies if you want
+
+      // Send the message to the Flask backend
+      const response = await fetch('http://localhost:5000/chat', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ message: message }),
+      });
+
+      const data = await response.json();
+      if (data.response) {
+        setChatLog([...chatLog, { sender: 'user', text: message }, { sender: 'bot', text: data.response }]);
+      }
     }
   };
 
