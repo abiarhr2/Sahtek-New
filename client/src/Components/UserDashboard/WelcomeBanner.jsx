@@ -4,7 +4,7 @@ const WelcomeBanner = () => {
   return (
     <div className="welcome-banner">
       <div className="welcome-text">
-        <h2>Welcome back, Sarah!</h2>
+        <h2>Welcome back, Abir!</h2>
         <p>Your next appointment is on <strong>June 10, 2023 at 10:30 AM</strong> with Dr. Michael Chen</p>
       </div>
       <div className="welcome-image">

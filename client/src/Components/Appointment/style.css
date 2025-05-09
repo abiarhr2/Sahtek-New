@@ -3,6 +3,7 @@
   display: flex;
   min-height: 100vh;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 0 20px; /* Add some padding for responsiveness */
 }
 
 /* Sidebar */
@@ -12,6 +13,11 @@
   color: white;
   padding: 30px 20px;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  position: fixed; /* Make sidebar fixed */
+  top: 0;
+  left: 0;
+  height: 100%;
+  z-index: 100; /* Keep sidebar above other content */
 }
 
 .logo {
@@ -41,11 +47,11 @@
   flex: 1;
   background-color: #ffffff;
   padding: 40px;
-  
+  margin-left: 240px; /* Offset the content to the right to make space for the sidebar */
+  width: 100%;
 }
 
-
-
+/* User Icon */
 .user-icon {
   font-size: 30px; 
   cursor: pointer;
@@ -81,9 +87,9 @@
   margin-bottom: 8px;
   font-weight: 600;
   color: #555;
-  margin-right: 50px;
 }
 
+/* Input Fields */
 .form input,
 .form textarea {
   width: 100%;
@@ -96,12 +102,61 @@
   box-sizing: border-box;  /* Include padding in the element's total width/height */
 }
 
-
 .form input:focus,
 .form textarea:focus {
   border-color: #0d9488;
   outline: none;
   box-shadow: 0 0 5px rgba(13, 148, 136, 0.2);
+}
+
+/* Date Picker */
+.date-picker {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.date-option {
+  padding: 10px 16px;
+  background-color: #e5e7eb;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: 16px;
+}
+
+.date-option:hover {
+  background-color: #ccc;
+}
+
+.date-option.selected {
+  background-color: #0d9488;
+  color: white;
+}
+
+/* Time Slot Picker */
+.time-slots {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.time-slot {
+  padding: 10px 16px;
+  background-color: #e5e7eb;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: 16px;
+}
+
+.time-slot:hover {
+  background-color: #ccc;
+}
+
+.time-slot.selected {
+  background-color: #0d9488;
+  color: white;
 }
 
 /* Priority Buttons */

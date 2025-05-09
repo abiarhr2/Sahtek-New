@@ -1,41 +1,53 @@
-/* Account.css */
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+html, body {
+  height: 100%;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f0f2f5;
+}
+
+/* Center the entire page */
 .account-page {
-  display: flex;
-  justify-content: center;
-  padding: 40px 20px;
-  background-color: #f5f5f5;
-  min-height: 100vh;
+  
+  display: flex!important;
+  justify-content: center!important;
+  align-items: center!important;
+  align-items: center!important;
+  flex-direction: column!important;
+  min-height: 100vh; /* Full viewport height */
 }
 
+/* Account Card Styles */
 .account-card {
-  background: #fff;
-  padding: 30px;
+  background-color: white;
+  padding: 40px 30px;
   border-radius: 16px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-  max-width: 500px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   width: 100%;
-}
-
-.account-card h2 {
-  margin-top: 0;
-  font-size: 28px;
-  color: #333;
-}
-
-.account-card p {
-  color: #777;
-  margin-bottom: 20px;
-}
-
-.account-form {
+  max-width: 500px;
+  transition: 0.3s ease-in-out;
   display: flex;
   flex-direction: column;
   gap: 20px;
+  text-align: center; /* Center text */
+  color: #333;
+  align-items: center!important;
 }
 
+/* Hover effect */
+.account-card:hover {
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Profile Section */
 .profile-section {
   display: flex;
+  justify-content: center;
   align-items: center;
   gap: 16px;
 }
@@ -50,6 +62,7 @@
   align-items: center;
   justify-content: center;
   font-size: 28px;
+  color: #fff;
 }
 
 .profile-pic img {
@@ -58,42 +71,33 @@
   object-fit: cover;
 }
 
+/* Upload button */
 .upload-button {
   padding: 10px 18px;
   background-color: #0066ff;
-  color: #fff;
+  color: white;
   border: none;
   border-radius: 8px;
   cursor: pointer;
   font-size: 14px;
   transition: background 0.3s ease;
   display: inline-block;
-  text-align: center;
 }
 
 .upload-button:hover {
   background-color: #0051cc;
 }
 
-.identity-verification h3 {
-  margin: 0;
-  font-size: 20px;
-  color: #333;
-}
-
-.identity-verification p {
-  margin: 4px 0 8px;
-  color: #666;
-}
-
-form {
+/* Form Styling */
+.account-form form {
   display: flex;
   flex-direction: column;
+  gap: 16px;
+  text-align: left;
 }
 
 form label {
   font-weight: 600;
-  margin-bottom: 6px;
   color: #444;
 }
 
@@ -104,7 +108,6 @@ form textarea {
   border-radius: 8px;
   font-size: 14px;
   margin-bottom: 16px;
-  resize: vertical;
   transition: border-color 0.3s ease;
 }
 
@@ -114,16 +117,7 @@ form textarea:focus {
   outline: none;
 }
 
-form textarea {
-  min-height: 80px;
-}
-
-.buttons {
-  display: flex;
-  justify-content: flex-end;
-  gap: 12px;
-}
-
+/* Save Button */
 .save-button {
   padding: 12px 20px;
   border: none;
@@ -132,7 +126,7 @@ form textarea {
   cursor: pointer;
   transition: background 0.3s ease;
   background-color: #28a745;
-  color: #fff;
+  color: white;
 }
 
 .save-button:hover {

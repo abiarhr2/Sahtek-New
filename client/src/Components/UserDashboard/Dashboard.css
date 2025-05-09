@@ -14,7 +14,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-start; /* Align items vertically at the top */
   position: relative;
+  max-width: 1200px; /* Set a max-width for the container */
+  margin: 0 auto; /* Center the container horizontally */
 }
 
 /* Welcome Banner */
@@ -57,20 +60,52 @@
   object-fit: cover;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
+
 /* Action Cards */
 .action-cards {
   width: 100%;
   max-width: 1200px;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); /* Flexible grid */
-  gap: 24px;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); /* Increased card size */
+  gap: 32px; /* Increased gap for more spacing */
   margin: 32px 0;
   position: relative;
   z-index: 5;
-  justify-items: center; /* Center grid items horizontally within each cell */
-  align-items: center; /* Center grid items vertically within each cell */
-  margin-left: 240px; /* Ensure it's placed to the right of the sidebar */
+  justify-items: center; /* Center grid items horizontally */
+  align-items: center; /* Center grid items vertically */
 }
+
+/* Action Card */
+.action-card {
+  background: white;
+  padding: 32px; /* Increased padding to make the cards larger */
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  border: 1px solid #e2f4f3;
+  position: relative;
+  z-index: 2; /* Ensure cards stay above other sections */
+  width: 100%; /* Ensure the card takes up the full available width */
+  max-width: 400px; /* Limit the maximum width of each card */
+}
+
+.action-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+}
+
+.action-card h3 {
+  color: var(--primary-color);
+  font-size: 1.4rem; /* Increased font size for better visibility */
+  margin-bottom: 12px;
+}
+
+.action-card p {
+  color: #555;
+  font-size: 1.05rem; /* Increased font size for better readability */
+}
+
 
 /* Main content */
 .main-content {
@@ -80,8 +115,7 @@
   height: 100vh;
 }
 
-
-
+/* Action Card */
 .action-card {
   background: white;
   padding: 24px;

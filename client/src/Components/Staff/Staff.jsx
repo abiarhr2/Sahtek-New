@@ -26,7 +26,7 @@ const Staff = () => {
     e.preventDefault();
     setLoading(true);
     try {
-      const response = await axios.post('http://localhost:5000/api/services/search', searchParams);
+      const response = await axios.post('http://localhost:3000/api/services/search', searchParams);
       setResults(response.data);
     } catch (err) {
       console.error('Search error:', err);
