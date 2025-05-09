@@ -1,3 +1,4 @@
+/* General layout for the content */
 .main-content {
   margin-left: 220px;
   padding: 2rem;
@@ -6,6 +7,7 @@
   align-items: flex-start;
 }
 
+/* Chatbox container styles */
 .chatbox-container {
   background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(18px);
@@ -26,6 +28,7 @@
   margin-right: auto; /* Centering the chatbox within the content */
 }
 
+/* Chat header styles */
 .chat-header {
   text-align: center;
   margin-bottom: 1.5rem;
@@ -36,7 +39,7 @@
 .chat-header h2 {
   font-size: 2.8rem;
   font-weight: 700;
-  color: white!important;
+  color: white !important;
   background: #66D2CE;
   -webkit-text-fill-color: transparent;
   margin-bottom: 0.3rem;
@@ -48,19 +51,21 @@
   opacity: 0.8;
 }
 
+/* Chat body with improved background and padding */
 .chat-body {
   flex: 1;
-  background: rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.85);  /* Increased opacity for better visibility */
   border-radius: 20px;
   padding: 1.2rem;
   overflow-y: auto;
   margin-bottom: 1.5rem;
   box-shadow: inset 0px 2px 15px rgba(0, 0, 0, 0.05);
-  backdrop-filter: blur(10px);
+  backdrop-filter: none;  /* Removed blur for better contrast */
   animation: fadeIn 1.2s ease;
   scroll-behavior: smooth;
 }
 
+/* Placeholder when there is no chat */
 .empty-chat {
   color: #aaa;
   text-align: center;
@@ -68,6 +73,7 @@
   font-style: italic;
 }
 
+/* Chat message styles for both user and bot */
 .chat-message {
   margin-bottom: 14px;
   max-width: 80%;
@@ -77,23 +83,52 @@
   line-height: 1.5;
   animation: slideUp 0.4s ease;
   transition: all 0.3s ease;
+  color: #333; /* Ensure text color is dark enough to be visible */
 }
 
+/* Styles for user messages */
 .chat-message.user {
   background: linear-gradient(135deg, #66D2CE, #2193b0);
-  color: #fff;
+  color: #fff;  /* White text for the user message */
   margin-left: auto;
   text-align: right;
   box-shadow: 0 4px 14px rgba(0, 145, 255, 0.3);
 }
+/* ChatSeha heading styles */
+.chat-header h2 {
+  font-size: 3rem; /* Increased font size for better visibility */
+  font-weight: 700; /* Make the font bold */
+  color: rgba(255, 255, 255, 0.686); /* White color for text */
+  background: linear-gradient(135deg, #66D2CE, #2193b0); /* Gradient background */
+  -webkit-background-clip: text; /* Apply the background gradient to the text */
+  background-clip: text; /* Ensure the gradient is clipped to the text */
+  text-align: center; /* Center the heading */
+  margin-bottom: 1.5rem; /* Space below the heading */
+  padding: 10px 20px; /* Padding around the text */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  text-transform: uppercase; /* Make the text uppercase */
+  letter-spacing: 2px; /* Space out the letters */
+  transition: all 0.3s ease; /* Smooth transition for hover effect */
+}
 
+/* Hover effect for ChatSeha heading */
+.chat-header h2:hover {
+  background: linear-gradient(135deg, #2193b0, #6dd5ed); /* Change gradient on hover */
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
+  transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+
+/* Styles for bot messages */
 .chat-message.bot {
   background: #f6f8fc;
-  color: #333;
+  color: #333;  /* Dark text for the bot message */
   text-align: left;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
 }
 
+/* Input area styles */
 .chat-input {
   display: flex;
   gap: 12px;
@@ -119,6 +154,7 @@
   box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.08);
 }
 
+/* Button styles for sending messages */
 .chat-input button {
   background: linear-gradient(135deg, #2193b0, #6dd5ed);
   color: white;
@@ -152,7 +188,7 @@
   to { transform: translateY(0); opacity: 1; }
 }
 
-/* Responsive Design */
+/* Responsive Design for mobile devices */
 @media screen and (max-width: 768px) {
   .main-content {
     margin-left: 0;

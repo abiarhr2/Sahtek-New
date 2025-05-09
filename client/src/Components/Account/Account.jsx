@@ -10,6 +10,7 @@ function Account() {
     photo: null,
   });
 
+  // Handle text input changes
   const handleChange = (e) => {
     const { id, value } = e.target;
     setProfile((prevProfile) => ({
@@ -18,6 +19,7 @@ function Account() {
     }));
   };
 
+  // Handle photo input change
   const handlePhotoChange = (e) => {
     setProfile((prevProfile) => ({
       ...prevProfile,
@@ -25,8 +27,11 @@ function Account() {
     }));
   };
 
+  // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // Create a new FormData object to send data with the photo
     const formData = new FormData();
     formData.append('name', profile.name);
     formData.append('email', profile.email);
@@ -43,7 +48,8 @@ function Account() {
       });
 
       const result = await response.json();
-      alert(result.message);
+      alert(result.message); // Show success message
+
     } catch (error) {
       console.error('Error saving profile:', error);
     }
@@ -52,7 +58,7 @@ function Account() {
   return (
     <div className="account-page">
       <div className="account-card">
-        <h2>Hello, {profile.name || 'User'}</h2>
+        <h2>Hello, {profile.name || 'Abir'}</h2>
         <p>Joined in 2021</p>
 
         <div className="account-form">

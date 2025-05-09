@@ -14,7 +14,6 @@ const Staff = () => {
 
   const [results, setResults] = useState([]);
   const [loading, setLoading] = useState(false);
-
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -44,7 +43,9 @@ const Staff = () => {
             city: provider.city,
             location: provider.location,
             hospital: provider.location,
-            providerName: provider.name
+            providerName: provider.name,
+            availableDays: provider.availableDays || [],
+            availableTimes: provider.availableTimes || []
           }
         })
       }
@@ -62,9 +63,11 @@ const Staff = () => {
     <div className="staff-subsection">
       <h3>{title}</h3>
       <div className="card-list">
-        {items.length === 0 ? <p>No results found</p> : items.map((item, index) => (
-          <StaffCard key={index} provider={item} />
-        ))}
+        {items.length === 0
+          ? <p>No results found</p>
+          : items.map((item, index) => (
+              <StaffCard key={index} provider={item} />
+            ))}
       </div>
     </div>
   );

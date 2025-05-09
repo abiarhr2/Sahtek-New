@@ -24,9 +24,10 @@ function Sidebar() {
     { path: '/staff', label: 'Staff', icon: staffIcon },
     { path: '/chatbox', label: 'ChatBox', icon: chatboxIcon },
     { path: '/inbox', label: 'Inbox', icon: inboxIcon },
-    { path: '/account', label: 'Account', icon: accountIcon },
     { path: '/history', label: 'History', icon: dashboardIcon }, // reuse dashboard icon
     { path: '/calendar', label: 'Calendar', icon: dashboardIcon }, // reuse dashboard icon
+    { path: '/account', label: 'Account', icon: accountIcon },
+
 
   ];
 
